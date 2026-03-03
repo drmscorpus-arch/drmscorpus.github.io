@@ -1,0 +1,640 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8"></meta>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+  <title>Contact — Dr MS Corpus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"></link>
+  <style>
+    /* ─── FORCE DARK BG — overrides Blogger white ─── */
+    html, body, .wrap, #content, .content-outer, .content-inner,
+    .main-inner, .blog-posts, .post-body, .post, .widget,
+    .page-body, .region-inner, #main-wrapper, #outer-wrapper,
+    #wrapper, #body-fauxcolumn-outer, .fauxcolumn-center-outer,
+    .fauxborder-left, .fauxborder-right {
+      background-color: #0b1524 !important;
+      background: #0b1524 !important;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0b1524;
+      --surface: #111f35;
+      --surface2: #162540;
+      --teal: #2ec4b6;
+      --amber: #f4a832;
+      --white: #f0f4f8;
+      --muted: #7a94ae;
+      --border: rgba(46,196,182,0.14);
+      --border2: rgba(240,244,248,0.07);
+    }
+
+    html { scroll-behavior: smooth; background: #0b1524 !important; }
+
+    body {
+      font-family: 'DM Sans', sans-serif !important;
+      background-color: #0b1524 !important;
+      background: #0b1524 !important;
+      color: #f0f4f8 !important;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(46,196,182,0.07) 0%, transparent 55%),
+        radial-gradient(circle at 85% 20%, rgba(244,168,50,0.05) 0%, transparent 45%);
+      pointer-events: none; z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(46,196,182,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(46,196,182,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none; z-index: 0;
+    }
+
+    .drms-page { position: relative; z-index: 1; background: transparent !important; }
+
+    /* ─── HEADER ─────────────────────────────── */
+    .drms-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 60px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(11,21,36,0.95) !important;
+      backdrop-filter: blur(8px);
+      position: sticky; top: 0; z-index: 100;
+      animation: fadeDown 0.7s ease both;
+    }
+
+    .drms-logo { display: flex; align-items: center; gap: 14px; text-decoration: none !important; }
+
+    .drms-logo-img {
+      width: 46px; height: 46px; border-radius: 50%;
+      object-fit: cover; border: 1.5px solid rgba(46,196,182,0.35);
+    }
+
+    .drms-logo-text { display: flex; flex-direction: column; line-height: 1; }
+
+    .drms-logo-name {
+      font-family: 'Libre Baskerville', serif !important;
+      font-size: 15px; font-weight: 700; color: #f0f4f8 !important;
+    }
+
+    .drms-logo-sub {
+      font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: #2ec4b6 !important; margin-top: 3px; font-weight: 300;
+    }
+
+    .drms-nav { display: flex; gap: 30px; align-items: center; list-style: none !important; }
+
+    .drms-nav a {
+      font-size: 11.5px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: #7a94ae !important; text-decoration: none !important; transition: color 0.2s;
+    }
+
+    .drms-nav a:hover, .drms-nav a.active { color: #2ec4b6 !important; }
+
+    .drms-nav-home {
+      padding: 9px 20px !important;
+      border: 1px solid rgba(46,196,182,0.3) !important;
+      border-radius: 4px; transition: all 0.2s !important;
+    }
+
+    .drms-nav-home:hover {
+      border-color: #2ec4b6 !important; color: #2ec4b6 !important;
+      background: rgba(46,196,182,0.06) !important;
+    }
+
+    /* ─── HERO ───────────────────────────────── */
+    .drms-hero {
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      min-height: 46vh; border-bottom: 1px solid var(--border);
+      background: transparent !important;
+    }
+
+    .drms-hero-left {
+      padding: 72px 60px; border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; justify-content: center;
+      background: transparent !important;
+      animation: fadeLeft 0.8s 0.15s ease both;
+    }
+
+    .drms-tag {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: #2ec4b6 !important; margin-bottom: 26px;
+    }
+
+    .drms-tag::before { content: ''; width: 24px; height: 1px; background: #2ec4b6; }
+
+    .drms-h1 {
+      font-family: 'Instrument Serif', serif !important;
+      font-size: clamp(44px, 5.5vw, 76px); font-weight: 400 !important;
+      line-height: 1.0; letter-spacing: -1px; margin-bottom: 24px;
+      color: #f0f4f8 !important;
+    }
+
+    .drms-h1 em { font-style: italic; color: #2ec4b6 !important; }
+    .drms-h1 .amb { color: #f4a832 !important; }
+
+    .drms-hero-emblem {
+      width: 80px; height: 80px; border-radius: 50%; object-fit: cover;
+      border: 2px solid rgba(46,196,182,0.25);
+      box-shadow: 0 0 28px rgba(46,196,182,0.12), 0 0 0 6px rgba(46,196,182,0.05);
+      margin-bottom: 24px;
+    }
+
+    .drms-hero-desc {
+      font-size: 16px; line-height: 1.75; color: #7a94ae !important;
+      font-weight: 300; max-width: 440px;
+    }
+
+    .drms-hero-desc strong { color: #f0f4f8 !important; font-weight: 500; }
+
+    .drms-hero-right {
+      padding: 56px 52px; display: flex; flex-direction: column;
+      justify-content: center; background: #111f35 !important;
+      animation: fadeRight 0.8s 0.2s ease both;
+    }
+
+    .drms-info-card {
+      display: flex; align-items: center; gap: 18px;
+      padding: 22px 0; border-bottom: 1px solid var(--border2);
+      text-decoration: none !important; transition: all 0.2s;
+    }
+
+    .drms-info-card:last-child { border-bottom: none; }
+    .drms-info-card:hover .drms-card-icon { background: #2ec4b6 !important; border-color: #2ec4b6 !important; color: #0b1524 !important; }
+    .drms-info-card:hover .drms-card-value { color: #2ec4b6 !important; }
+
+    .drms-card-icon {
+      width: 42px; height: 42px; border: 1px solid var(--border);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-size: 17px; flex-shrink: 0; transition: all 0.2s;
+      color: #2ec4b6 !important; background: transparent !important;
+    }
+
+    .drms-card-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #7a94ae !important; }
+    .drms-card-value { font-family: 'Libre Baskerville', serif !important; font-size: 14.5px; color: #f0f4f8 !important; transition: color 0.2s; }
+
+    .drms-social-strip { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border2); }
+    .drms-social-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #7a94ae !important; margin-bottom: 14px; }
+    .drms-social-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .drms-social-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 16px; border: 1px solid var(--border) !important;
+      font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase;
+      color: #7a94ae !important; text-decoration: none !important;
+      transition: all 0.22s; border-radius: 4px; background: transparent !important;
+    }
+
+    .drms-social-btn:hover { border-color: #2ec4b6 !important; color: #2ec4b6 !important; background: rgba(46,196,182,0.07) !important; }
+
+    /* ─── ECG BAND ───────────────────────────── */
+    .drms-ecg {
+      display: flex; align-items: center; gap: 24px;
+      padding: 13px 60px; background: #111f35 !important;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .drms-ecg-line { flex: 1; height: 28px; overflow: hidden; }
+    .drms-ecg-line svg { width: 200%; height: 100%; animation: scrollEcg 4s linear infinite; }
+
+    @keyframes scrollEcg { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .drms-ecg-text { font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; color: #2ec4b6 !important; white-space: nowrap; }
+
+    /* ─── FORM SECTION ───────────────────────── */
+    .drms-form-section {
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      border-bottom: 1px solid var(--border);
+      background: transparent !important;
+      animation: fadeUp 0.8s 0.25s ease both;
+    }
+
+    .drms-form-sidebar {
+      padding: 64px 48px 64px 60px;
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: #111f35 !important;
+    }
+
+    .drms-sidebar-title {
+      font-family: 'Instrument Serif', serif !important;
+      font-size: 34px; font-weight: 400 !important;
+      line-height: 1.15; margin-bottom: 20px; color: #f0f4f8 !important;
+    }
+
+    .drms-sidebar-body {
+      font-size: 15px; line-height: 1.75;
+      color: #7a94ae !important; font-weight: 300; font-style: italic;
+    }
+
+    .drms-about-block {
+      margin-top: 32px; padding: 22px;
+      border: 1px solid var(--border); border-radius: 6px;
+      background: rgba(46,196,182,0.04) !important;
+    }
+
+    .drms-about-block strong {
+      display: block; font-size: 9.5px; letter-spacing: 2px;
+      text-transform: uppercase; color: #2ec4b6 !important;
+      margin-bottom: 10px; font-weight: 400;
+    }
+
+    .drms-about-block p { font-size: 13.5px; line-height: 1.75; color: #7a94ae !important; font-weight: 300; }
+
+    .drms-reply-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-top: 32px; padding: 12px 20px;
+      border: 1px solid rgba(46,196,182,0.25) !important;
+      border-radius: 100px; font-size: 10.5px; letter-spacing: 1.5px;
+      text-transform: uppercase; color: #2ec4b6 !important; width: fit-content;
+    }
+
+    .drms-pulse {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #2ec4b6; animation: pulse 2s ease-in-out infinite; flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); box-shadow:0 0 0 0 rgba(46,196,182,0.4); }
+      50% { opacity:0.6; transform:scale(0.85); box-shadow:0 0 0 5px rgba(46,196,182,0); }
+    }
+
+    /* ─── MESSAGE PANEL ──────────────────────── */
+    .drms-msg-panel {
+      padding: 64px 60px;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      gap: 36px; background: transparent !important;
+    }
+
+    .drms-msg-heading {
+      font-family: 'Instrument Serif', serif !important;
+      font-size: 38px; font-weight: 400 !important;
+      line-height: 1.15; color: #f0f4f8 !important;
+    }
+
+    .drms-msg-heading em { font-style: italic; color: #2ec4b6 !important; }
+
+    .drms-msg-desc {
+      font-size: 16px; line-height: 1.8;
+      color: #7a94ae !important; font-weight: 300;
+      max-width: 460px;
+    }
+
+    .drms-msg-desc strong { color: #f0f4f8 !important; font-weight: 500; }
+
+    /* ─── STEPS ──────────────────────────────── */
+    .drms-steps {
+      display: flex; flex-direction: column; gap: 0;
+      width: 100%; border: 1px solid var(--border);
+      border-radius: 8px; overflow: hidden;
+    }
+
+    .drms-step {
+      display: flex; align-items: flex-start; gap: 20px;
+      padding: 22px 28px;
+      border-bottom: 1px solid var(--border);
+      background: #111f35 !important;
+      transition: background 0.2s;
+    }
+
+    .drms-step:last-child { border-bottom: none; }
+    .drms-step:hover { background: #162540 !important; }
+
+    .drms-step-num {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid rgba(46,196,182,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Instrument Serif', serif !important;
+      font-size: 16px; color: #2ec4b6 !important;
+      flex-shrink: 0; margin-top: 2px;
+    }
+
+    .drms-step-body { display: flex; flex-direction: column; gap: 4px; }
+
+    .drms-step-title {
+      font-size: 14px; font-weight: 500;
+      color: #f0f4f8 !important; letter-spacing: 0.2px;
+    }
+
+    .drms-step-desc { font-size: 13px; color: #7a94ae !important; font-weight: 300; line-height: 1.6; }
+
+    /* ─── MAIN CTA BUTTON ────────────────────── */
+    .drms-cta-wrap {
+      display: flex; flex-direction: column; gap: 16px; width: 100%;
+    }
+
+    .drms-open-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 14px; width: 100%;
+      background: #2ec4b6 !important;
+      color: #0b1524 !important;
+      padding: 20px 40px;
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      text-decoration: none !important;
+      border-radius: 6px;
+      transition: all 0.25s;
+      position: relative; overflow: hidden;
+      border: none !important;
+    }
+
+    .drms-open-btn::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: #f4a832;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+
+    .drms-open-btn:hover::before { transform: translateX(0); }
+    .drms-open-btn:hover { color: #0b1524 !important; }
+
+    .drms-open-btn span,
+    .drms-open-btn .btn-icon { position: relative; z-index: 1; }
+
+    .drms-open-btn .btn-icon {
+      font-size: 18px;
+      transition: transform 0.25s;
+    }
+
+    .drms-open-btn:hover .btn-icon { transform: translateX(5px); }
+
+    .drms-alt-link {
+      text-align: center;
+      font-size: 12px; color: #7a94ae !important;
+      font-weight: 300;
+    }
+
+    .drms-alt-link a {
+      color: #2ec4b6 !important;
+      text-decoration: underline !important;
+      text-underline-offset: 3px;
+    }
+
+    /* ─── WHAT TO EXPECT BOX ─────────────────── */
+    .drms-expect {
+      width: 100%;
+      padding: 24px 28px;
+      border: 1px solid rgba(46,196,182,0.2);
+      border-radius: 8px;
+      background: rgba(46,196,182,0.04) !important;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+
+    .drms-expect-title {
+      font-size: 9.5px; letter-spacing: 2.5px;
+      text-transform: uppercase; color: #2ec4b6 !important;
+      display: flex; align-items: center; gap: 10px;
+    }
+
+    .drms-expect-title::before { content: ''; width: 18px; height: 1px; background: #2ec4b6; }
+
+    .drms-expect-items { display: flex; flex-direction: column; gap: 10px; }
+
+    .drms-expect-item {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 13.5px; color: #7a94ae !important; font-weight: 300;
+    }
+
+    .drms-expect-item::before {
+      content: '✚'; font-size: 10px;
+      color: #2ec4b6 !important; flex-shrink: 0;
+    }
+
+    /* ─── SANSKRIT ────────────────────────────── */
+    .drms-sanskrit {
+      padding: 44px 60px; text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: #111f35 !important;
+    }
+
+    .drms-sanskrit-text {
+      font-family: 'Libre Baskerville', serif !important;
+      font-size: clamp(20px, 3vw, 30px);
+      color: #2ec4b6 !important; letter-spacing: 2px; margin-bottom: 10px;
+    }
+
+    .drms-sanskrit-meaning { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #7a94ae !important; }
+
+    /* ─── FOOTER ─────────────────────────────── */
+    .drms-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 60px; flex-wrap: wrap; gap: 12px;
+      background: #0b1524 !important; border-top: 1px solid var(--border);
+    }
+
+    .drms-footer-left { font-size: 12px; color: #7a94ae !important; font-weight: 300; }
+    .drms-footer-left a { color: #2ec4b6 !important; text-decoration: none !important; }
+    .drms-footer-right { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #7a94ae !important; }
+
+    /* ─── ANIMATIONS ─────────────────────────── */
+    @keyframes fadeDown  { from { opacity:0; transform:translateY(-18px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeLeft  { from { opacity:0; transform:translateX(-24px); } to { opacity:1; transform:translateX(0); } }
+    @keyframes fadeRight { from { opacity:0; transform:translateX(24px);  } to { opacity:1; transform:translateX(0); } }
+    @keyframes fadeUp    { from { opacity:0; transform:translateY(22px);  } to { opacity:1; transform:translateY(0); } }
+
+    /* ─── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 900px) {
+      .drms-header { padding: 16px 22px; }
+      .drms-nav { gap: 14px; }
+      .drms-hero { grid-template-columns: 1fr; min-height: auto; }
+      .drms-hero-left { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+      .drms-hero-right { padding: 40px 24px; }
+      .drms-ecg { padding: 12px 24px; }
+      .drms-form-section { grid-template-columns: 1fr; }
+      .drms-form-sidebar { padding: 40px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+      .drms-msg-panel { padding: 40px 24px; }
+      .drms-sanskrit { padding: 36px 24px; }
+      .drms-footer { padding: 20px 24px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="drms-page">
+
+  <!-- HEADER -->
+  <header class="drms-header">
+    <a class="drms-logo" href="https://drmsanaesthesia.blogspot.com">
+      <img alt="Dr MS Corpus" class="drms-logo-img" src="https://blogger.googleusercontent.com/img/a/AVvXsEiZ62Q6TdqWO9OU15Jhm-bkaIWjHjI0qUuhNNU0Dudn63Tb1Cy5a5tQdi_H6cbBcFT0cKHYgGdkmaECjfxC9l38lIHD3KT6-Y8i174rOPK8ZWoiVLBBtiZ4oMWMegJGBkJCdYeVBW1WHsPiPagG6bhsUCj_0RjX_ZLitjpAVbFAjwSpeP9Q7xOr5Ou2pC4" />
+      <div class="drms-logo-text">
+        <span class="drms-logo-name">Dr MS Corpus</span>
+        <span class="drms-logo-sub">Medical Education</span>
+      </div>
+    </a>
+    <nav>
+      <ul class="drms-nav">
+        <li><a class="drms-nav-home" href="https://drmsanaesthesia.blogspot.com">← Home</a></li>
+        <li><a href="https://drmsanaesthesia.blogspot.com/#posts">Articles</a></li>
+        <li><a href="https://drmsanaesthesia.blogspot.com/#about">About</a></li>
+        <li><a class="active" href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="drms-hero">
+    <div class="drms-hero-left">
+      <div class="drms-tag">Get in Touch</div>
+      <h1 class="drms-h1">Let's Learn<br /><em>Together,</em><br /><span class="amb">Connect</span></h1>
+      <img alt="Dr MS Corpus" class="drms-hero-emblem" src="https://blogger.googleusercontent.com/img/a/AVvXsEjxinKL2A0WLyWBVTlj2uQB_W6ujCdTEaA1IpXXXHmjvdOwzdgg5ft1CtiiQ7joEeIfkWGwe1P60yM4cCc7iHJMjFpIgWTh-w20U2JfRH1W48eVDIS4c7McHF_BngyLfnEf64Ta5JqvVQ3YQ4-ed_OPqZfNwNhQZUIvgXlAolOytk8Jaz_tuIsUmOUu1eI" />
+      <p class="drms-hero-desc">
+        This is a space built <strong>from a learner, for learners</strong> — where medicine is made interlinked, clinical, and truly understandable. Have a question, a topic idea, or just want to talk medicine? I'd love to hear from you.
+      </p>
+    </div>
+    <div class="drms-hero-right">
+      <a class="drms-info-card" href="mailto:drmscorpus@gmail.com">
+        <div class="drms-card-icon">✉</div>
+        <div>
+          <div class="drms-card-label">Email</div>
+          <div class="drms-card-value">drmscorpus@gmail.com</div>
+        </div>
+      </a>
+      <div class="drms-info-card" style="cursor: default;">
+        <div class="drms-card-icon">📍</div>
+        <div>
+          <div class="drms-card-label">Based in</div>
+          <div class="drms-card-value">India</div>
+        </div>
+      </div>
+      <div class="drms-info-card" style="cursor: default;">
+        <div class="drms-card-icon">🩺</div>
+        <div>
+          <div class="drms-card-label">Focus</div>
+          <div class="drms-card-value">Medical Education</div>
+        </div>
+      </div>
+      <div class="drms-social-strip">
+        <p class="drms-social-label">Follow Along</p>
+        <div class="drms-social-btns">
+          <a class="drms-social-btn" href="https://www.instagram.com/drmscorpus" target="_blank">📸 Instagram</a>
+          <a class="drms-social-btn" href="https://www.youtube.com/@drmscorpus" target="_blank">▶ YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECG BAND -->
+  <div class="drms-ecg">
+    <div class="drms-ecg-line">
+      <svg fill="none" preserveaspectratio="none" viewbox="0 0 400 28">
+        <polyline opacity="0.65" points="0,14 30,14 40,4 44,24 48,2 52,26 56,14 94,14 104,8 108,20 112,14 160,14 170,4 174,24 178,2 182,26 186,14 224,14 234,8 238,20 242,14 290,14 300,4 304,24 308,2 312,26 316,14 354,14 364,8 368,20 372,14 400,14" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" stroke="#2ec4b6">
+        <polyline opacity="0.65" points="400,14 440,4 444,24 448,2 452,26 456,14 494,14 504,8 508,20 512,14 560,14 570,4 574,24 578,2 582,26 586,14 624,14 634,8 638,20 642,14 690,14 700,4 704,24 708,2 712,26 716,14 754,14 764,8 768,20 772,14 800,14" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" stroke="#2ec4b6">
+      </polyline></polyline></svg>
+    </div>
+    <span class="drms-ecg-text">Send a Message</span>
+    <div class="drms-ecg-line" style="transform: scaleX(-1);">
+      <svg fill="none" preserveaspectratio="none" viewbox="0 0 400 28">
+        <polyline opacity="0.65" points="0,14 30,14 40,4 44,24 48,2 52,26 56,14 94,14 104,8 108,20 112,14 160,14 170,4 174,24 178,2 182,26 186,14 224,14 234,8 238,20 242,14 290,14 300,4 304,24 308,2 312,26 316,14 354,14 364,8 368,20 372,14 400,14" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" stroke="#2ec4b6">
+        <polyline opacity="0.65" points="400,14 440,4 444,24 448,2 452,26 456,14 494,14 504,8 508,20 512,14 560,14 570,4 574,24 578,2 582,26 586,14 624,14 634,8 638,20 642,14 690,14 700,4 704,24 708,2 712,26 716,14 754,14 764,8 768,20 772,14 800,14" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" stroke="#2ec4b6">
+      </polyline></polyline></svg>
+    </div>
+  </div>
+
+  <!-- FORM SECTION -->
+  <section class="drms-form-section">
+    <div class="drms-form-sidebar">
+      <div>
+        <h2 class="drms-sidebar-title">Write to<br />Dr MS Corpus</h2>
+        <p class="drms-sidebar-body">
+          Whether it's a clinical concept you'd like explained, feedback on the blog, a collaboration idea, or just a fellow learner saying hello — every message is read with care.
+        </p>
+        <div class="drms-about-block">
+          <strong>About this space</strong>
+          <p>Dr MS Corpus is dedicated to making medical education interlinked, clinical, and genuinely understandable — content created from a learner's perspective, for learners at every stage.</p>
+        </div>
+        <div class="drms-reply-badge">
+          <span class="drms-pulse"></span>
+          Responds within 2–4 days
+        </div>
+      </div>
+    </div>
+
+    <!-- MESSAGE PANEL -->
+    <div class="drms-msg-panel">
+
+      <div>
+        <h2 class="drms-msg-heading">Ready to<br /><em>start a conversation?</em></h2>
+      </div>
+
+      <p class="drms-msg-desc">
+        Click below to open the contact form. It takes less than <strong>2 minutes</strong> to fill in — and you'll receive a copy of your message directly in your inbox.
+      </p>
+
+      <!-- HOW IT WORKS STEPS -->
+      <div class="drms-steps">
+        <div class="drms-step">
+          <div class="drms-step-num">1</div>
+          <div class="drms-step-body">
+            <div class="drms-step-title">Click "Open Contact Form"</div>
+            <div class="drms-step-desc">The form opens in a new tab — clean, simple, and secure via Google Forms.</div>
+          </div>
+        </div>
+        <div class="drms-step">
+          <div class="drms-step-num">2</div>
+          <div class="drms-step-body">
+            <div class="drms-step-title">Fill in your details &amp; message</div>
+            <div class="drms-step-desc">Your name, email, topic, and whatever's on your mind — clinical question, feedback, or just hello!</div>
+          </div>
+        </div>
+        <div class="drms-step">
+          <div class="drms-step-num">3</div>
+          <div class="drms-step-body">
+            <div class="drms-step-title">Hit Submit — you're done</div>
+            <div class="drms-step-desc">A copy lands in your inbox. Dr MS Corpus gets notified and replies within 2–4 days.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BIG CTA BUTTON -->
+      <div class="drms-cta-wrap">
+        <a class="drms-open-btn" href="https://forms.gle/KpLq7NBoYfAEcFC49" target="_blank">
+          <span>Open Contact Form</span>
+          <span class="btn-icon">→</span>
+        </a>
+        <p class="drms-alt-link">
+          Or email directly at <a href="mailto:drmscorpus@gmail.com">drmscorpus@gmail.com</a>
+        </p>
+      </div>
+
+      <!-- WHAT TO EXPECT -->
+      <div class="drms-expect">
+        <div class="drms-expect-title">What to expect</div>
+        <div class="drms-expect-items">
+          <div class="drms-expect-item">You receive a confirmation copy instantly in your email</div>
+          <div class="drms-expect-item">Dr MS Corpus reads every message personally</div>
+          <div class="drms-expect-item">Response within 2–4 days via email</div>
+          <div class="drms-expect-item">Your information is never shared with anyone</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SANSKRIT -->
+  <div class="drms-sanskrit">
+    <div class="drms-sanskrit-text">उद्धरेदात्मनात्मानं</div>
+    <div class="drms-sanskrit-meaning">Uplift yourself by yourself &nbsp;·&nbsp; Bhagavad Gita</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="drms-footer">
+    <p class="drms-footer-left">© 2026 <strong>Dr MS Corpus</strong> — Medical Education &nbsp;·&nbsp; <a href="mailto:drmscorpus@gmail.com">drmscorpus@gmail.com</a></p>
+    <span class="drms-footer-right">From a learner, for learners &nbsp;✚&nbsp; India</span>
+  </footer>
+
+</div>
+</body>
+</html>
