@@ -1,0 +1,81 @@
+<style>
+    :root {
+        --primary: #0f4c81;      /* Deep medical blue */
+        --secondary: #2a9d8f;    /* Surgical green */
+        --light-bg: #f4f9fc;     /* Soft background */
+        --text-dark: #1f2937;
+        --accent: #e76f51;       /* Subtle highlight */
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        margin: 0;
+        background-color: var(--light-bg);
+        color: var(--text-dark);
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 40px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+        color: var(--primary);
+        font-size: 2.4em;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        color: var(--secondary);
+        margin-top: 40px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--secondary);
+    }
+
+    h3 {
+        color: var(--primary);
+        margin-top: 25px;
+    }
+
+    a {
+        color: var(--secondary);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    a:hover {
+        color: var(--accent);
+    }
+
+    .intro {
+        background-color: #e6f2f7;
+        padding: 20px;
+        border-left: 5px solid var(--primary);
+        border-radius: 8px;
+        margin: 25px 0;
+    }
+
+    .welcome {
+        text-align: center;
+        color: var(--secondary);
+        font-weight: bold;
+        margin: 20px 0;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        color: gray;
+        font-size: 0.9em;
+    }
+</style>
